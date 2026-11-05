@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: actai-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: ACTAI_ALLOWED_ORIGINS
+        value: "https://ffzit37-commits.github.io,http://localhost:3000"
+      - key: OPENROUTER_MODEL
+        value: "openrouter/auto"
+      - key: OPENROUTER_API_KEY
+        sync: false
