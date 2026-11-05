@@ -3,58 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#101114">
-  <meta name="description" content="Actai — مساعدك الذكي لإنجاز أفكارك ومهامك.">
-  <title>Actai — مساعدك الذكي</title>
+  <meta name="theme-color" content="#08090b">
+  <meta name="description" content="Actai — مساحة ذكاء اصطناعي واحدة لتحويل أفكارك إلى إنجازات.">
+  <title>Actai — Beyond Imagination</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
   <div class="app-shell">
     <aside class="sidebar" id="sidebar">
-      <div class="brand"><span class="brand-mark">A</span><span>Actai</span></div>
-      <button class="new-chat" id="newChat">＋ محادثة جديدة</button>
-      <div class="side-label">مساحة العمل</div>
-      <button class="side-link active">◉ المحادثة</button>
-      <button class="side-link" data-tool="إنشاء فيلم">▣ إنشاء فيلم</button>
-      <button class="side-link" data-tool="كتابة الكود">⌘ كتابة الكود</button>
-      <button class="side-link" data-tool="إنشاء ملف">▤ إنشاء ملف</button>
-      <div class="side-label history-label">المحادثات</div>
-      <div id="history" class="history"></div>
-      <div class="sidebar-footer"><span class="status-dot"></span> Actai — النسخة الأولية</div>
+      <a class="brand" href="#" aria-label="Actai"><span class="brand-mark">A<span>·</span></span><span>actai</span></a>
+      <button class="new-chat" id="newChat"><span>＋</span> محادثة جديدة</button>
+      <div class="side-caption">مساحتك</div>
+      <div class="side-note"><span class="live-dot"></span><span>كل شيء يبدأ بفكرة</span></div>
+      <div class="side-caption history-caption">الأخيرة</div>
+      <div id="history" class="history"><div class="empty-history">ستظهر محادثاتك هنا</div></div>
+      <div class="sidebar-bottom">
+        <div class="profile-mark">A</div><div><strong>Actai Studio</strong><small>مساحة العمل الخاصة بك</small></div>
+        <span class="profile-status"></span>
+      </div>
     </aside>
 
     <main class="main">
       <header class="topbar">
-        <button class="icon-btn mobile-menu" id="menuBtn" aria-label="القائمة">☰</button>
-        <div class="model-name">Actai <span class="model-tag">مساعدك الذكي</span></div>
-        <button class="icon-btn" id="clearBtn" title="محادثة جديدة" aria-label="محادثة جديدة">＋</button>
+        <button class="icon-btn mobile-menu" id="menuBtn" aria-label="فتح القائمة">☰</button>
+        <div class="top-brand"><span class="top-brand-mark">A</span><span>Actai</span><span class="top-divider"></span><small>INTELLIGENCE STUDIO</small></div>
+        <div class="top-actions"><span class="secure-label"><i></i> مساحة خاصة</span><button class="icon-btn" id="clearBtn" title="محادثة جديدة" aria-label="محادثة جديدة">＋</button></div>
       </header>
 
       <section class="conversation" id="conversation">
         <div class="welcome" id="welcome">
-          <div class="welcome-symbol">A</div>
-          <p class="eyebrow">مساحة واحدة لكل أفكارك</p>
-          <h1>مرحباً، أنا <span>Actai</span></h1>
-          <p class="welcome-copy">اكتب ما تريد إنجازه، وسنبدأ بتحويل فكرتك إلى خطوات عملية.</p>
-          <div class="suggestions">
-            <button class="suggestion" data-prompt="ساعدني في كتابة فكرة فيلم سينمائي">🎬 <span>ابتكر فكرة فيلم</span></button>
-            <button class="suggestion" data-prompt="أنشئ لي هيكل مشروع تطبيق ويب">⌘ <span>أنشئ مشروعاً برمجياً</span></button>
-            <button class="suggestion" data-prompt="اكتب لي خطة عمل منظمة لمشروعي">✦ <span>خطط لمشروعي</span></button>
-            <button class="suggestion" data-prompt="ساعدني في كتابة مستند احترافي">▤ <span>أنشئ مستنداً</span></button>
-          </div>
+          <div class="hero-orbit"><div class="orbit-ring ring-a"></div><div class="orbit-ring ring-b"></div><div class="hero-core">A<span>·</span></div><i class="orbit-point point-a"></i><i class="orbit-point point-b"></i><i class="orbit-point point-c"></i></div>
+          <div class="hero-kicker"><span></span> YOUR IDEAS. WITHOUT LIMITS.</div>
+          <h1>فكرتك تستحق<br><em>أن تصبح حقيقة.</em></h1>
+          <p class="welcome-copy">مساحة ذكاء اصطناعي واحدة. اكتب ما يدور في ذهنك، ودع Actai يتولى تحويله إلى عمل.</p>
+          <div class="hero-prompt-label"><span>ابدأ من هنا</span><span class="label-line"></span><span>لا توجد قوائم أو أوضاع</span></div>
         </div>
         <div class="messages" id="messages" aria-live="polite"></div>
       </section>
 
       <footer class="composer-area">
         <form class="composer" id="chatForm">
-          <textarea id="prompt" rows="1" placeholder="اكتب أمرك إلى Actai..." aria-label="اكتب رسالتك"></textarea>
+          <textarea id="prompt" rows="1" placeholder="اكتب أي شيء تريد من Actai أن ينجزه..." aria-label="اكتب طلبك إلى Actai"></textarea>
           <div class="composer-bottom">
-            <span class="composer-hint">صف ما تريد بوضوح، وسنساعدك في تنفيذه</span>
-            <button class="send-btn" id="sendBtn" type="submit" aria-label="إرسال">↑</button>
+            <div class="composer-meta"><span class="sparkle">✳</span><span>يفهم طلبك ويوجّهه تلقائيًا</span><span class="meta-separator">·</span><span>كل المهام في محادثة واحدة</span></div>
+            <button class="send-btn" id="sendBtn" type="submit" aria-label="إرسال الطلب"><span>↑</span></button>
           </div>
         </form>
-        <p class="disclaimer">Actai في مرحلة البناء — قد تحتاج بعض المهام إلى ربط خدمات ونماذج خارجية.</p>
+        <p class="disclaimer">قد تتطلب بعض القدرات المتقدمة تفعيل خدمات الذكاء الاصطناعي المناسبة.</p>
       </footer>
     </main>
   </div>
