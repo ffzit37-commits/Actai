@@ -5,7 +5,7 @@ const welcome=document.getElementById("welcome");
 const historyBox=document.getElementById("history");
 const sidebar=document.getElementById("sidebar");
 const sendBtn=document.getElementById("sendBtn");
-const API_BASE_URL="https://actai-api.onrender.com";
+const API_BASE_URL="https://actai-ukmf.onrender.com";
 const conversations=[];
 let activeConversation=null;
 
