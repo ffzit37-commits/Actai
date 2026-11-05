@@ -5,6 +5,7 @@ const welcome=document.getElementById("welcome");
 const historyBox=document.getElementById("history");
 const sidebar=document.getElementById("sidebar");
 const sendBtn=document.getElementById("sendBtn");
+const API_BASE_URL="https://actai-api.onrender.com";
 const conversations=[];
 let activeConversation=null;
 
@@ -45,14 +46,14 @@ async function sendMessage(){
   const reply=addMessage("أعمل على طلبك…","assistant");
   sendBtn.disabled=true;
   try{
-    const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:value,conversation_id:String(activeConversation.id),language:"ar",routing:"automatic"})});
+    const response=await fetch(`${API_BASE_URL}/api/chat`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:value,conversation_id:String(activeConversation.id),language:"ar",routing:"automatic"})});
     if(!response.ok)throw new Error("تعذر الاتصال بخدمة الذكاء الاصطناعي.");
     const data=await response.json();
     const answer=data.reply||data.message||data.output;
     if(!answer)throw new Error("وصل رد غير مكتمل من الخادم.");
     reply.textContent=answer;activeConversation.messages.push({role:"assistant",text:answer});
   }catch(error){
-    const notice="وصل طلبك إلى واجهة Actai، لكن محرك الذكاء الاصطناعي لم يُربط بالخادم بعد. هذه الصفحة منشورة كواجهة ويب فقط؛ لتفعيل الإجابات الحقيقية نحتاج إلى إعداد خادم وربط مزوّدي النماذج بشكل آمن.";
+    const notice=error.message||"تعذر الاتصال بخادم Actai. تحقق من أن الخادم منشور على Render.";
     reply.textContent=notice;activeConversation.messages.push({role:"assistant",text:notice});
   }finally{sendBtn.disabled=false;input.focus()}
 }
