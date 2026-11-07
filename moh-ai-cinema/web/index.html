@@ -9,7 +9,9 @@
 <section class="panel"><div class="section-title"><span class="step">01</span><div><h2>مشروع جديد</h2><small>أخبرنا بالفيلم الذي تريد صنعه</small></div></div>
 <label for="idea">فكرة الفيلم</label><textarea id="idea" rows="4" placeholder="مثال: محقق جزائري يكتشف شبكة سرية تتحكم في مدينة ساحلية..."></textarea>
 <div class="grid"><div><label for="genre">النوع</label><select id="genre"><option>أكشن وجريمة</option><option>رعب وغموض</option><option>خيال علمي</option><option>دراما</option><option>حرب ومعارك</option><option>وثائقي</option></select></div>
-<div><label for="language">لغة الحوار</label><select id="language"><option>العربية الجزائرية</option><option>العربية الفصحى</option><option>الإنجليزية</option></select></div>
+<div><label for="language">لغة واجهة السيناريو</label><select id="language"><option value="ar">العربية</option><option value="en">English</option></select>
+<div class="cast-box"><label for="cast">الشخصيات وهويتها (كل شخصية في سطر)</label><textarea id="cast" rows="3" placeholder="أحمد | جزائري\nJohn | أمريكي\nليلى | مصرية"></textarea><small>اكتب الاسم ثم الهوية/الجنسية. يمكن تحديد اللغة في آخر السطر: أحمد | جزائري | العربية</small></div>
+<label for="dialoguePolicy">لغة كلام الشخصيات</label><select id="dialoguePolicy"><option value="identity">تلقائياً حسب الهوية: العربية للعرب والإنجليزية لغير العرب</option><option value="ar">كل الشخصيات بالعربية</option><option value="en">كل الشخصيات بالإنجليزية</option><option value="mixed">كل شخصية بلغتها المحددة في وصفها</option></select></div>
 <div><label for="duration">المدة المستهدفة</label><select id="duration"><option value="40">40 دقيقة</option><option value="60" selected>60 دقيقة</option></select></div>
 <div><label for="tone">أسلوب الفيلم</label><select id="tone"><option>واقعي سينمائي</option><option>تشويق مظلم</option><option>ملحمي</option><option>وثائقي واقعي</option></select></div></div>
 <button id="create" class="primary">✦ أنشئ خطة الفيلم</button><p class="hint">المرحلة الحالية تنشئ مخططاً سينمائياً ثم ترسم فيديو تجريبياً متحركاً على جهازك. لا تتطلب مفتاح API.</p></section>
@@ -17,7 +19,7 @@
 <div class="stats"><div><b id="chapterCount">8</b><small>فصول</small></div><div><b id="sceneCount">32</b><small>مشاهد</small></div><div><b id="filmDuration">60</b><small>دقيقة مستهدفة</small></div></div>
 <div id="chapters" class="chapters"></div><div class="actions"><button id="export" class="secondary">تصدير المشروع JSON</button><button id="copyAll" class="secondary">نسخ ملخص المشاهد</button></div></section>
 <section id="renderPanel" class="panel hidden"><div class="section-title"><span class="step">03</span><div><h2>إنتاج الفيديو</h2><small>تحويل المشاهد إلى فيديو قابل للتشغيل</small></div></div>
-<div class="notice">هذه نسخة تجريبية من المونتاج: رسوم سينمائية متحركة مبنية على المشاهد مع خلفية صوتية إلكترونية. ليست لقطات بشرية واقعية مولّدة بالذكاء الاصطناعي بعد.</div>
+<div class="notice">هذه نسخة تجريبية من المونتاج: رسوم سينمائية متحركة مبنية على المشاهد مع خلفية صوتية إلكترونية. ليست لقطات بشرية واقعية مولّدة بالذكاء الاصطناعي بعد. إعدادات الشخصيات واللغة تجهّز تعليمات السيناريو ولا تنشئ صوتاً أو مزامنة شفاه حقيقية حالياً.</div>
 <label for="sceneSeconds">مدة كل مشهد في الفيديو التجريبي</label><select id="sceneSeconds"><option value="2">ثانيتان — سريع</option><option value="3" selected>3 ثوانٍ — متوازن</option><option value="5">5 ثوانٍ — أطول</option><option value="8">8 ثوانٍ — مطوّل</option></select>
 <button id="renderVideo" class="primary">إنتاج الفيديو من المشاهد</button><progress id="renderProgress" value="0" max="100"></progress><p id="renderStatus" class="hint">أنشئ خطة الفيلم أولاً لبدء الإنتاج.</p>
 <canvas id="filmCanvas" width="1280" height="720" class="render-canvas"></canvas><video id="videoOutput" class="video-output hidden" controls playsinline></video><a id="downloadVideo" class="download-link hidden">تنزيل الفيديو الناتج (WebM)</a></section>
