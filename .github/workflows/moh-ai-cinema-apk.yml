@@ -1,0 +1,46 @@
+name: Build MOH AI CINEMA APK
+on:
+  push:
+    branches: [moh-ai-cinema]
+    paths:
+      - 'moh-ai-cinema/**'
+      - '.github/workflows/moh-ai-cinema-apk.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: moh-ai-cinema
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Build web assets and Android project
+        run: |
+          npm install
+          npm run build
+          npx cap add android
+          npx cap sync android
+      - name: Build debug APK
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: MOH-AI-CINEMA-debug-apk
+          path: moh-ai-cinema/android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 14
