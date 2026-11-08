@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: actai-api
+    name: cinemora-ai
     runtime: node
     plan: free
     buildCommand: npm install
@@ -9,9 +9,3 @@ services:
     envVars:
       - key: NODE_VERSION
         value: "20"
-      - key: ACTAI_ALLOWED_ORIGINS
-        value: "https://ffzit37-commits.github.io,http://localhost:3000"
-      - key: OPENROUTER_MODEL
-        value: "openrouter/auto"
-      - key: OPENROUTER_API_KEY
-        sync: false
