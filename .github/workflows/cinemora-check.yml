@@ -1,0 +1,20 @@
+name: CINEMORA AI checks
+on:
+  push:
+    branches: [cinemora-ai]
+  pull_request:
+    branches: [cinemora-ai]
+jobs:
+  syntax-and-dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm install
+      - run: node --check server.js
+      - run: node --check app.js
+      - run: node -e "import('ffmpeg-static').then(m=>{if(!m.default)process.exit(1);console.log('FFmpeg binary package ready')})"
+      - run: node -e "import('ffprobe-static').then(m=>{if(!m.default?.path)process.exit(1);console.log('FFprobe binary package ready')})"
