@@ -1,3 +1,11 @@
 {
- "name":"MOH AI CINEMA","short_name":"MOH CINEMA","start_url":"./index.html","display":"standalone","background_color":"#090d18","theme_color":"#090d18","lang":"ar","dir":"rtl"
+  "name":"CINEMORA AI",
+  "short_name":"CINEMORA",
+  "start_url":"./index.html",
+  "display":"standalone",
+  "background_color":"#090812",
+  "theme_color":"#090812",
+  "lang":"ar",
+  "dir":"rtl",
+  "icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
 }

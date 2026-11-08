@@ -1,6 +1,6 @@
 {
-  "appId": "dz.moh.aicinema",
-  "appName": "MOH AI CINEMA",
-  "webDir": "www",
-  "bundledWebRuntime": false
+  "appId":"ai.cinemora.studio",
+  "appName":"CINEMORA AI",
+  "webDir":"www",
+  "bundledWebRuntime":false
 }
