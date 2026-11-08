@@ -1,9 +1,9 @@
 {
   "name":"cinemora-ai",
-  "version":"0.2.0",
+  "version":"0.2.1",
   "private":true,
   "description":"CINEMORA AI video clipping and dubbing studio",
-  "scripts":{"build":"node scripts/build.mjs"},
+  "scripts":{"build":"node scripts/build.mjs","android:icons":"node scripts/android-icons.mjs"},
   "dependencies":{"@capacitor/android":"6.1.2","@capacitor/core":"6.1.2"},
-  "devDependencies":{"@capacitor/cli":"6.1.2"}
+  "devDependencies":{"@capacitor/cli":"6.1.2","sharp":"^0.33.5"}
 }
