@@ -1,15 +1,19 @@
 # Learn English With Alex
 
-**A practical English self-study course from beginner level to B2.**
+**تطبيق تفاعلي لتعلّم الإنجليزية من الصفر إلى B2 مع شرح القواعد بالعربية.**
 
-This book is organised as 50 short lessons and review pages. It covers:
+## افتح التطبيق
+- [التطبيق التعليمي العربي](app.html)
+- [نسخة الكتاب بتقليب الصفحات](index.html)
 
-- A0–A1 foundations: alphabet, greetings, pronouns, the verb *be*, articles, plurals, possessives, present simple and present continuous.
-- A2: past tenses, future forms, countable and uncountable nouns, quantifiers, comparisons and modal verbs.
-- B1: present perfect, past perfect, conditionals, passive voice, reported speech, relative clauses, gerunds, infinitives and phrasal verbs.
-- B2 skills: collocations, word formation, pronunciation, reading, listening, speaking, writing, formal register and argumentation.
-- Final review test, answer key and a 30-day study challenge.
+## ماذا يتضمن؟
+- مقدمة عربية توضح طريقة الدراسة.
+- فهرس عربي قابل للبحث والتصفية حسب المستوى.
+- 49 درساً تعليمياً مع شرح عربي وأمثلة إنجليزية.
+- مستويات A1 وA2 وB1 وB2.
+- أزرار للتنقل بين الدروس.
+- تصميم متجاوب للهاتف والحاسوب.
 
-The complete 50-page A5 PDF and the interactive page-flip HTML edition were generated as companion files. The interactive edition uses the StPageFlip library from a CDN, so an internet connection is needed for the page-turn effect.
+يغطي المنهج الحروف والتحيات، الضمائر والأزمنة، أدوات التعريف، الأسئلة، الشرط، المبني للمجهول، الكلام المنقول، الأفعال المركبة، المفردات، النطق، الاستماع، التحدث، القراءة والكتابة، ثم مراجعة وتحدي 30 يوماً.
 
-> This is a self-study resource, not an official CEFR examination or a guarantee of B2 attainment. Reaching B2 also requires consistent practice and feedback in all four skills.
+> هذا منهج للتعلم الذاتي وليس امتحاناً رسمياً أو ضماناً للوصول إلى B2. يتطلب التقدم ممارسة منتظمة وتقييماً للمهارات الأربع.
