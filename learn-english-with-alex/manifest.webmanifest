@@ -1,0 +1,12 @@
+{
+  "name": "Learn English With Alex",
+  "short_name": "English Alex",
+  "start_url": "./app.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f2f4f7",
+  "theme_color": "#101d32",
+  "lang": "ar",
+  "dir": "rtl",
+  "description": "تطبيق تعلّم الإنجليزية مع شرح القواعد بالعربية"
+}
