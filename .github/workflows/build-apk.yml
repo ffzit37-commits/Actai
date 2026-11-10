@@ -1,0 +1,66 @@
+name: Build Learn English With Alex APK
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "learn-english-with-alex/**"
+      - ".github/workflows/build-apk.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Prepare web app and Capacitor
+        run: |
+          mkdir -p www
+          cp learn-english-with-alex/app.html www/index.html
+          cp learn-english-with-alex/manifest.webmanifest www/manifest.webmanifest
+          cp learn-english-with-alex/sw.js www/sw.js
+          npm install --no-save @capacitor/core @capacitor/android @capacitor/cli
+          cat > capacitor.config.json <<'EOF'
+          {
+            "appId": "com.actai.learnenglishwithalex",
+            "appName": "Learn English With Alex",
+            "webDir": "www",
+            "server": {
+              "androidScheme": "https"
+            }
+          }
+          EOF
+          npx cap add android
+          npx cap sync android
+
+      - name: Build debug APK
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Learn-English-With-Alex-APK
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 30
